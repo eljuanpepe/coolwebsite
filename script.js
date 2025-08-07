@@ -14,8 +14,6 @@ async function play() {
     await sleep(3500)
     h3.classList.add("fade")
     h3.style.opacity = "100%"
-    await sleep(3000)
-    window.close()
 }
 
 play()
