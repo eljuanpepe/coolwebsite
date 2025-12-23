@@ -1,0 +1,93 @@
+:root {
+  --track-radius: 9999px;
+  --bg-color: #41980a;
+  --dirt-color: #836539;
+  --hose-size: 50px;
+}
+
+body {
+  background-image: url("../assets/horse/grass.jpeg");
+  background-size: cover;
+}
+
+a {
+  background-color: white;
+}
+
+.track {
+  position: relative;
+  background-image: url("../assets/horse/dirt.webp");
+  background-size: cover;
+  height: 90vh;
+  width: 95vw;
+  margin: auto;
+
+  border-radius: var(--track-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.track--center {
+  background-image: url("../assets/horse/grass.jpeg");
+  background-size: cover;
+  height: 50%;
+  width: 70%;
+  border-radius: var(--track-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.track--center button {
+  background-color: var(--dirt-color);
+  color: white;
+  border: none;
+  padding: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 50ms ease-in-out;
+}
+
+.track--center button:disabled {
+  background-color: lightgrey;
+}
+
+.track--center button:enabled:hover {
+  filter: brightness(1.5);
+}
+
+.horse {
+  position: absolute;
+  width: var(--hose-size);
+  height: var(--hose-size);
+  offset-path: content-box;
+  transform: translateY(var(--lane, 0px));
+}
+
+#horse1 {--lane: calc(var(--hose-size) * 0.5);}
+#horse2 {--lane: calc(var(--hose-size) * 1.5);}
+#horse3 {--lane: calc(var(--hose-size) * 2.5);}
+#horse4 {--lane: calc(var(--hose-size) * 3.5);}
+
+.racing {
+  animation: 
+    move 12s linear, 
+    flip 1s linear infinite;
+
+  animation-composition: add;
+}
+
+@keyframes move {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes flip {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}

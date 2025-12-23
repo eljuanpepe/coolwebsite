@@ -27,6 +27,6 @@ main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h2, h3 {
+h2, h3, a {
     opacity: 0;
 }

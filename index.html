@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<link rel="stylesheet" type="text/css" href="styles.css">
-<body>
-    <main>
-        <h1>I had no idea what to do for this website</h1>
-        <h2>So just didn't do anything</h2>
-        <h3>:P</h3>
-    </main>
-</body>
-<script src="script.js"></script>
+<html>
+<script>
+    var sites = ["idk", "randomPoem", "horseRacing"]
+    const params = new URLSearchParams(window.location.search)
+    const from = params.get("from")
+    if (from) {
+        for (let i = 0; i < sites.length; i++) {
+            if (sites[i] === from) {
+                sites.splice(i, 1)
+            }
+        }
+    }
+    randomSite = sites[Math.floor(Math.random() * sites.length)]
+    window.location.assign(`./sites/${randomSite}.html`)
+</script>
 </html>

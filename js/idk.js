@@ -1,4 +1,4 @@
-const texts = document.getElementsByTagName("main")[0].children
+const texts = document.querySelector("main").children
 
 const sleep = (ms) => new Promise(res => setTimeout(res, ms));
 
