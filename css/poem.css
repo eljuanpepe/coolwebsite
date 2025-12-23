@@ -23,3 +23,8 @@ p {
 a {
     background-color: aliceblue;
 }
+
+small {
+    padding-top: auto;
+    background-color: white;
+}
